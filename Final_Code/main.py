@@ -34,6 +34,9 @@ from pyrender import PerspectiveCamera,\
                      Primitive, Mesh, Node, Scene,\
                      Viewer, OffscreenRenderer, RenderFlags
 
+from Final_Code.Detector import Detector
+from Final_Code.Locator import Locator
+
 pyglet.options['shadow_window'] = False
 
 openni2.initialize()
@@ -44,4 +47,13 @@ dev.set_image_registration_mode(True)
 depth_stream.start()
 
 capture = cv2.VideoCapture(0)
+
+#人眼检测
+position_x, position_y, position_depth = Detector(depth_stream, capture)
+
+#人眼定位
+x, y, z = Locator(position_x, position_y, position_depth)
+
+#画面渲染
+
     

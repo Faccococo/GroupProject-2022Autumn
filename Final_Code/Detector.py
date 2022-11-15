@@ -50,7 +50,11 @@ def Detector(depth_stream, capture):
     points = movenet(input_image)
     point_1 = points[0][0][1]
     point_2 = points[0][0][2]
-    # position_x = 
-    for point in points[0][0][1:3]:
-        print(point[1] * image_size, ",", point[0] * image_size,\
-                "   ", dpt[int(point[0] * 480), int(point[1] * 640)])
+
+    #取平均
+    position_x = (point_1[1] * image_size + point_2[1] * image_size) / 2
+    position_y = (point_1[0] * image_size + point_2[0] * image_size) / 2
+    position_depth = (dpt[int(point_1[0] * 480), int(point_1[1] * 640)] + \
+        dpt[int(point_2[0] * 480), int(point_2[1] * 640)]) / 2
+    return position_x, position_y, position_depth
+
