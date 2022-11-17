@@ -1,41 +1,12 @@
-import tensorflow as tf
-import tensorflow_hub as hub
-from tensorflow_docs.vis import embed
-from openni import openni2
-import numpy as np
 import cv2
- 
-# Import matplotlib libraries
-from matplotlib import pyplot as plt
-from matplotlib.collections import LineCollection
-import matplotlib.patches as patches
-
-# Some modules to display an animation using imageio.
-import imageio
-from IPython.display import HTML, display
-
-# Import matplotlib libraries
-from matplotlib import pyplot as plt
-from matplotlib.collections import LineCollection
-import matplotlib.patches as patches
-
-import imageio
-from IPython.display import HTML, display
-
 import pyglet
-import os
-import numpy as np
-import trimesh
-import pyrr
+from openni import openni2
 
-from pyrender import PerspectiveCamera,\
-                     DirectionalLight, SpotLight, PointLight,\
-                     MetallicRoughnessMaterial,\
-                     Primitive, Mesh, Node, Scene,\
-                     Viewer, OffscreenRenderer, RenderFlags
+import Render
 
-from Final_Code.Detector import Detector
-from Final_Code.Locator import Locator
+# Import matplotlib libraries
+# Some modules to display an animation using imageio.
+# Import matplotlib libraries
 
 pyglet.options['shadow_window'] = False
 
@@ -48,12 +19,5 @@ depth_stream.start()
 
 capture = cv2.VideoCapture(0)
 
-#人眼检测
-position_x, position_y, position_depth = Detector(depth_stream, capture)
-
-#人眼定位
-x, y, z = Locator(position_x, position_y, position_depth)
-
-#画面渲染
-
-    
+# 画面渲染
+Render(depth_stream, capture)
