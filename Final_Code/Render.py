@@ -4,8 +4,9 @@ pyglet.options['shadow_window'] = False
 import numpy as np
 import trimesh
 import pyrr
-import Locator
-import Detector
+from Locator import Locator
+from Detector import Detector
+import time
 
 from pyrender import PerspectiveCamera, \
     DirectionalLight, SpotLight, PointLight, \
@@ -13,24 +14,24 @@ from pyrender import PerspectiveCamera, \
     Viewer
 
 
-def Render(x, y, z, depth_stream, capture):
+def Render(depth_stream, capture):
     # Fuze trimesh
-    fuze_trimesh = trimesh.load('./models/fuze.obj')
+    fuze_trimesh = trimesh.load('./Final_Code/examples/models/fuze.obj')
     fuze_mesh = Mesh.from_trimesh(fuze_trimesh)
 
     # Drill trimesh
-    drill_trimesh = trimesh.load('./models/drill.obj')
+    drill_trimesh = trimesh.load('./Final_Code/examples/models/drill.obj')
     drill_mesh = Mesh.from_trimesh(drill_trimesh)
     drill_pose = np.eye(4)
     drill_pose[0, 3] = 0.1
     drill_pose[2, 3] = -np.min(drill_trimesh.vertices[:, 2])
 
     # Wood trimesh
-    wood_trimesh = trimesh.load('./models/wood.obj')
+    wood_trimesh = trimesh.load('./Final_Code/examples/models/wood.obj')
     wood_mesh = Mesh.from_trimesh(wood_trimesh)
 
     # Water bottle trimesh
-    bottle_gltf = trimesh.load('./models/WaterBottle.glb')
+    bottle_gltf = trimesh.load('./Final_Code/examples/models/WaterBottle.glb')
     bottle_trimesh = bottle_gltf.geometry[list(bottle_gltf.geometry.keys())[0]]
     bottle_mesh = Mesh.from_trimesh(bottle_trimesh)
     bottle_pose = np.array([
@@ -74,24 +75,28 @@ def Render(x, y, z, depth_stream, capture):
 
     # add camera to scene
     cam = PerspectiveCamera(yfov=(np.pi / 3.0), aspectRatio=1.414)
-    cam_pose = getCamPosByCap(depth_stream, capture)
+    cam_pose = getCamPosByCap(depth_stream, capture, 0)
     cam_node = scene.add(cam, cam_pose)
 
     # create viewer
     v = Viewer(scene, central_node=drill_node, run_in_thread=True, use_raymond_lighting=True)
 
+    i = 0.00
     while True:
+        time.sleep(0.1)
         v.render_lock.acquire()
 
-        v._default_camera_pose = getCamPosByCap(depth_stream, capture)
+        v._default_camera_pose = getCamPosByCap(depth_stream, capture, i)
         v._reset_view()
 
         v.render_lock.release()
 
+        i += 0.01
 
-def getLocation(depth_stream, capture):
+
+def getLocation(depth_stream, capture, i):
     position_x, position_y, position_depth = Detector(depth_stream, capture)
-    x, y, z = Locator(position_x, position_y, position_depth)
+    x, y, z = Locator(position_x, position_y, position_depth, i)
     return x, y, z
 
 
@@ -101,5 +106,6 @@ def createCamPos(x, y, z):
     return cam_pose
 
 
-def getCamPosByCap(depth_stream, capture):
-    return createCamPos(getLocation(depth_stream, capture))
+def getCamPosByCap(depth_stream, capture, i):
+    x, y, z = getLocation(depth_stream, capture, i)
+    return createCamPos(x, y, z)

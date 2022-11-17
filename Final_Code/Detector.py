@@ -7,8 +7,10 @@ import tensorflow_hub as hub
 
 # Some modules to display an animation using imageio.
 
-module = hub.load("movenet_singlepose_thunder_4")
-image_size = 256
+# module = hub.load("./Final_Code/movenet_singlepose_thunder_4")
+# image_size = 256
+module = hub.load("./Final_Code/movenet_singlepose_lightning_4")
+image_size = 192
 
 
 def movenet(input_image):
@@ -49,4 +51,5 @@ def Detector(depth_stream, capture):
     position_y = (point_1[0] * image_size + point_2[0] * image_size) / 2
     position_depth = (dpt[int(point_1[0] * 480), int(point_1[1] * 640)] + \
                       dpt[int(point_2[0] * 480), int(point_2[1] * 640)]) / 2
+
     return position_x, position_y, position_depth

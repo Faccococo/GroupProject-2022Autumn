@@ -1,9 +1,11 @@
 import math
 
 import numpy as np
+import time
+
+def Locator(position_x, position_y, position_depth, i):
 
 
-def Locator(position_x, position_y, position_depth):
     def getThreeDimensionalCoordinate(xc, yc, zc, xz, yz, zz, xup, yup, w, h, d, seita):
         # 先忽略了所有绝对值
         t = xz - xc
@@ -24,4 +26,8 @@ def Locator(position_x, position_y, position_depth):
 
     answer = getThreeDimensionalCoordinate(0, 0, 0, np.sqrt(3) / 3, np.sqrt(3) / 3, np.sqrt(3) / 3, 2, 4, 4, 8,
                                            np.sqrt(5) / 2, 0.5 * math.pi);
-    return 0, 0, 0
+
+    (x, y, z) = (0.5, 0 + i, 0.4)
+    
+    
+    return x, y, z
