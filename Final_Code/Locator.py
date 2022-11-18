@@ -7,6 +7,15 @@ def Locator(position_x, position_y, position_depth, i):
 
 
     def getThreeDimensionalCoordinate(xc, yc, zc, xz, yz, zz, xup, yup, w, h, d, seita):
+        #xc, yc, zc:摄像头坐标
+        #xz, yz, zz:监控摄像头正对一米处坐标
+        #xup, yup:人眼二维坐标
+        #w, h：屏幕宽与高
+        #d：深度
+        #seita：监控摄像头视场角
+
+        #坐标原点：屏幕中点
+
         # 先忽略了所有绝对值
         t = xz - xc
         u = yz - yc

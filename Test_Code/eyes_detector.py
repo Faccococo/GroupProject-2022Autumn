@@ -17,7 +17,7 @@ from IPython.display import HTML, display
 
 # module = hub.load("movenet_singlepose_lightning_4")
 # image_size = 192
-module = hub.load("movenet_singlepose_thunder_4")
+module = hub.load("./Test_Code/movenet_singlepose_thunder_4")
 image_size = 256
 
 def movenet(input_image):
