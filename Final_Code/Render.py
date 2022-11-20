@@ -1,17 +1,16 @@
-import pyglet
-
-pyglet.options['shadow_window'] = False
-import numpy as np
-import trimesh
-import pyrr
-from Locator import Locator
-from Detector import Detector
-import time
-
 from pyrender import PerspectiveCamera, \
     DirectionalLight, SpotLight, PointLight, \
     Mesh, Node, Scene, \
     Viewer
+import time
+from Detector import Detector
+from Locator import Locator
+import pyrr
+import trimesh
+import numpy as np
+import pyglet
+
+pyglet.options['shadow_window'] = False
 
 
 def Render(depth_stream, capture):
@@ -62,7 +61,8 @@ def Render(depth_stream, capture):
 
     scene = Scene(ambient_light=np.array([0.02, 0.02, 0.02, 1.0]))
 
-    fuze_node = Node(mesh=fuze_mesh, translation=np.array([0.1, 0.15, -np.min(fuze_trimesh.vertices[:, 2])]))
+    fuze_node = Node(mesh=fuze_mesh, translation=np.array(
+        [0.1, 0.15, -np.min(fuze_trimesh.vertices[:, 2])]))
     scene.add_node(fuze_node)
     boxv_node = Node(mesh=boxv_mesh, translation=np.array([-0.1, 0.10, 0.05]))
     scene.add_node(boxv_node)
@@ -74,20 +74,28 @@ def Render(depth_stream, capture):
     wood_node = scene.add(wood_mesh)
 
     # add camera to scene
-    cam = PerspectiveCamera(yfov=(np.pi / 3.0), aspectRatio=1.414)
+    cam = PerspectiveCamera(yfov=(np.pi / 3.0), aspectRatio=16 / 9)
     cam_pose = getCamPosByCap(depth_stream, capture, 0)
     cam_node = scene.add(cam, cam_pose)
 
     # create viewer
-    v = Viewer(scene, central_node=drill_node, run_in_thread=True, use_raymond_lighting=True)
+    v = Viewer(scene, central_node=drill_node,
+               run_in_thread=True, use_raymond_lighting=True)
 
     i = 0.00
     while True:
         time.sleep(0.1)
         v.render_lock.acquire()
 
-        v._default_camera_pose = getCamPosByCap(depth_stream, capture, i)
-        v._reset_view()
+        try:
+            v._default_camera_pose = getCamPosByCap(depth_stream, capture, i)
+            v._reset_view()
+        except ValueError:
+            cam_pose = pyrr.matrix44.create_look_at(
+                (0.5, 0, 0.4), (0, 0, 0), (0, 0, 1))
+            cam_pose = np.linalg.inv(cam_pose.T)
+            v._default_camera_pose = cam_pose
+            v._reset_view()
 
         v.render_lock.release()
 
@@ -96,11 +104,12 @@ def Render(depth_stream, capture):
 
 def getLocation(depth_stream, capture, i):
     position_x, position_y, position_depth = Detector(depth_stream, capture)
-    x, y, z = Locator(position_x, position_y, position_depth, i)
+    y, x, z = Locator(position_x, position_y, position_depth, i)
+    x = 0 - x
     return x, y, z
 
 
-def createCamPos(x, y, z):
+def createCamPos(x=0.5, y=0, z=0.4):
     cam_pose = pyrr.matrix44.create_look_at((x, y, z), (0, 0, 0), (0, 0, 1))
     cam_pose = np.linalg.inv(cam_pose.T)
     return cam_pose

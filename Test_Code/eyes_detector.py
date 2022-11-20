@@ -73,7 +73,8 @@ if __name__ == "__main__":
         key = cv2.waitKey(50)
         if key == ord('w'):
             for point in points[0][0][1:3]:
-                print(point[1] * image_size, ",", point[0] * image_size, "   ", dpt[int(point[0] * 480), int(point[1] * 640)])
+                # print(point[1] * image_size, ",", point[0] * image_size, "   ", dpt[int(point[0] * 480), int(point[1] * 640)])
+                print(point[1], ",", 1 - point[0], "   ", dpt[int(point[0] * 480), int(point[1] * 640)] * 0.001)
         if key  == ord('q'):  #判断是哪一个键按下 
             break
 

@@ -4,15 +4,30 @@ import numpy as np
 import time
 
 def Locator(position_x, position_y, position_depth, i):
-
-
-    def getThreeDimensionalCoordinate(xc, yc, zc, xz, yz, zz, xup, yup, w, h, d, seita):
         #xc, yc, zc:摄像头坐标
         #xz, yz, zz:监控摄像头正对一米处坐标
         #xup, yup:人眼二维坐标
         #w, h：屏幕宽与高
         #d：深度
         #seita：监控摄像头视场角
+    w = 0.345
+    h = 0.200
+    d = position_depth
+    xup = position_x * w
+    yup = position_y * h
+    xc = 0
+    yc = 0
+    zc = h / 2
+    xz = 0
+    yz = - 1
+    zz = h / 2
+    seita = (46.7 / 180) * math.pi
+
+    
+
+
+    def getThreeDimensionalCoordinate(xc, yc, zc, xz, yz, zz, xup, yup, w, h, d, seita):
+
 
         #坐标原点：屏幕中点
 
@@ -36,7 +51,8 @@ def Locator(position_x, position_y, position_depth, i):
     answer = getThreeDimensionalCoordinate(0, 0, 0, np.sqrt(3) / 3, np.sqrt(3) / 3, np.sqrt(3) / 3, 2, 4, 4, 8,
                                            np.sqrt(5) / 2, 0.5 * math.pi);
 
-    (x, y, z) = (0.5, 0 + i, 0.4)
-    
+    # (x, y, z) = (0.5, 0 + i, 0.4)
+
+    [x, y, z] = getThreeDimensionalCoordinate(xc, yc, zc, xz, yz, zz, xup, yup, w, h, d, seita)
     
     return x, y, z
