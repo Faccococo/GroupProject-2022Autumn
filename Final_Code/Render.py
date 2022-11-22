@@ -84,27 +84,26 @@ def Render(depth_stream, capture):
 
     i = 0.00
     while True:
-        time.sleep(0.1)
+        time.sleep(1 / 60)
         v.render_lock.acquire()
-
         try:
-            v._default_camera_pose = getCamPosByCap(depth_stream, capture, i)
+            v._default_camera_pose = getCamPosByCap(depth_stream, capture)
             v._reset_view()
         except ValueError:
             cam_pose = pyrr.matrix44.create_look_at(
                 (0.5, 0, 0.4), (0, 0, 0), (0, 0, 1))
-            cam_pose = np.linalg.inv(cam_pose.T)
-            v._default_camera_pose = cam_pose
-            v._reset_view()
+        cam_pose = np.linalg.inv(cam_pose.T)
+        v._default_camera_pose = cam_pose
+        v._reset_view()
 
         v.render_lock.release()
 
         i += 0.01
 
 
-def getLocation(depth_stream, capture, i):
+def getLocation(depth_stream, capture):
     position_x, position_y, position_depth = Detector(depth_stream, capture)
-    y, x, z = Locator(position_x, position_y, position_depth, i)
+    y, x, z = Locator(position_x, position_y, position_depth)
     x = 0 - x
     return x, y, z
 
@@ -115,6 +114,6 @@ def createCamPos(x=0.5, y=0, z=0.4):
     return cam_pose
 
 
-def getCamPosByCap(depth_stream, capture, i):
-    x, y, z = getLocation(depth_stream, capture, i)
+def getCamPosByCap(depth_stream, capture):
+    x, y, z = getLocation(depth_stream, capture)
     return createCamPos(x, y, z)
