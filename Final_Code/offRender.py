@@ -5,6 +5,7 @@ from pyrender import PerspectiveCamera, \
 import time
 from Detector import Detector
 from Locator import Locator
+from deformation import deformation
 import pyrr
 import trimesh
 import numpy as np
