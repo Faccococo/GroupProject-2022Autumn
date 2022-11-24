@@ -13,6 +13,13 @@ image_size = 256
 # image_size = 192
 
 
+def rebound(a):
+    if a > 1:
+        return 1
+    else:
+        return a
+
+
 def movenet(input_image):
     model = module.signatures['serving_default']
     # SavedModel format expects tensor type of int32.
@@ -27,7 +34,8 @@ def movenet(input_image):
 def Detector(depth_stream, capture):
     frame = depth_stream.read_frame()
     # 转换数据格式
-    dframe_data = np.array(frame.get_buffer_as_triplet()).reshape([480, 640, 2])
+    dframe_data = np.array(frame.get_buffer_as_triplet()
+                           ).reshape([480, 640, 2])
     dpt1 = np.asarray(dframe_data[:, :, 0], dtype='float32')
     dpt2 = np.asarray(dframe_data[:, :, 1], dtype='float32')
 
@@ -49,7 +57,7 @@ def Detector(depth_stream, capture):
     # 取平均
     position_x = (point_1[1] + point_2[1]) / 2
     position_y = (point_1[0] + point_2[0]) / 2
-    position_depth = ((dpt[int(point_1[0] * 480), int(point_1[1] * 640) - 1] + \
-                      dpt[int(point_2[0] * 480), int(point_2[1] * 640)]) / 2) * 0.001
+    position_depth = ((dpt[int(rebound(point_1[0]) * 480) - 1, int(rebound(point_1[1]) * 640) - 1] +
+                      dpt[int(rebound(point_2[0]) * 480) - 1, int(rebound(point_2[1]) * 640) - 1]) / 2) * 0.001
 
     return position_x, position_y, position_depth

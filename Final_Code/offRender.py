@@ -1,7 +1,7 @@
 from pyrender import PerspectiveCamera, \
     DirectionalLight, SpotLight, PointLight, \
     Mesh, Node, Scene, \
-    Viewer
+    Viewer, OffscreenRenderer
 import time
 from Detector import Detector
 from Locator import Locator
@@ -9,11 +9,12 @@ import pyrr
 import trimesh
 import numpy as np
 import pyglet
+import cv2
 
 pyglet.options['shadow_window'] = False
 
 
-def Render(depth_stream, capture):
+def offRender(depth_stream, capture):
     # Fuze trimesh
     fuze_trimesh = trimesh.load('./Final_Code/examples/models/fuze.obj')
     fuze_mesh = Mesh.from_trimesh(fuze_trimesh)
@@ -82,41 +83,39 @@ def Render(depth_stream, capture):
     cam_node = scene.add(cam, cam_pose)
 
     # create viewer
-    v = Viewer(scene, central_node=drill_node,
-               run_in_thread=True, use_raymond_lighting=True)
+    r = OffscreenRenderer(viewport_width=640*2, viewport_height=480*2)
 
     i = 0.00
     last_depth = position_depth
 
     while True:
         time.sleep(1 / 24)
-        v.render_lock.acquire()
+
         position_x, position_y, position_depth = Detector(
             depth_stream, capture)
 
         try:
-
             if abs(position_depth - last_depth) > 0.1:
                 position_depth = 0.95 * last_depth + 0.05 * position_depth
             # position_depth = 0.95 * last_depth + 0.05 * position_depth
 
-            v._default_camera_pose = getCamPosByCap(
-                position_x, position_y, position_depth)
-            v._reset_view()
+            scene.set_pose(node=cam_node, pose=getCamPosByCap(
+                position_x, position_y, position_depth))
 
         except ValueError:
             cam_pose = pyrr.matrix44.create_look_at(
                 (0.5, 0, 0.4), (0, 0, 0), (0, 0, 1))
             cam_pose = np.linalg.inv(cam_pose.T)
-            v._default_camera_pose = cam_pose
             cam_pose[-1] = [0, 0, 0, 1]
-            v._reset_view()
-
-        v.render_lock.release()
-        print("position_depth: ", position_depth, "last_depth: ", last_depth)
+            scene.set_pose(node=cam_node, pose=cam_pose)
 
         i += 0.01
         last_depth = position_depth
+        color, _ = r.render(scene)
+        cv2.imshow("video", color)
+        key = cv2.waitKey(50)
+        if key == ord('q'):  # 判断是哪一个键按下
+            break
 
 
 def getLocation(position_x, position_y, position_depth):
