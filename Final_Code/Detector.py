@@ -53,6 +53,10 @@ def Detector(depth_stream, capture):
     points = movenet(input_image)
     point_1 = points[0][0][1]
     point_2 = points[0][0][2]
+    for point in points[0][0][1:3]:
+        # print((point[0] * image_size, point[1] * image_size))
+        cv2.circle(frame, center=(int(point[1] * image_size), int(
+            point[0] * image_size)), radius=3, color=(255, 0, 0), thickness=3)
 
     # 取平均
     position_x = (point_1[1] + point_2[1]) / 2
