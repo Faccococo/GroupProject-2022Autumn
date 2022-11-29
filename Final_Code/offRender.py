@@ -88,7 +88,7 @@ def offRender(depth_stream, capture):
     # add camera to scene
     cam = PerspectiveCamera(yfov=(np.pi / 3.0), aspectRatio=16 / 9)
 
-    position_x, position_y, position_depth = Detector(depth_stream, capture)
+    position_x, position_y, position_depth, _ = Detector(depth_stream, capture)
     cam_pose = getCamPosByCap(position_x, position_y, position_depth)
 
     cam_node = scene.add(cam, cam_pose)
@@ -102,7 +102,7 @@ def offRender(depth_stream, capture):
     while True:
         time.sleep(1 / 60)
 
-        position_x, position_y, position_depth = Detector(
+        position_x, position_y, position_depth, frame = Detector(
             depth_stream, capture)
 
         try:
@@ -124,6 +124,7 @@ def offRender(depth_stream, capture):
         last_depth = position_depth
         color, _ = r.render(scene)
         cv2.imshow("video", color)
+        cv2.imshow("image", frame)
         key = cv2.waitKey(50)
         if key == ord('q'):  # 判断是哪一个键按下
             break

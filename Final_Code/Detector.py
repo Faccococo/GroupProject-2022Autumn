@@ -60,4 +60,4 @@ def Detector(depth_stream, capture):
     position_depth = ((dpt[int(rebound(point_1[0]) * 480) - 1, int(rebound(point_1[1]) * 640) - 1] +
                       dpt[int(rebound(point_2[0]) * 480) - 1, int(rebound(point_2[1]) * 640) - 1]) / 2) * 0.001
 
-    return position_x, position_y, position_depth
+    return position_x, position_y, position_depth, frame
