@@ -90,7 +90,7 @@ def offRender(depth_stream, capture):
     last_depth = position_depth
 
     while True:
-        time.sleep(1 / 24)
+        time.sleep(1 / 60)
 
         position_x, position_y, position_depth = Detector(
             depth_stream, capture)
