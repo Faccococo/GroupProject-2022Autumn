@@ -63,6 +63,16 @@ def offRender(depth_stream, capture):
 
     scene = Scene(ambient_light=np.array([0.02, 0.02, 0.02, 1.0]))
 
+    pose = np.array([
+        [0.0,  -np.sqrt(2)/2, np.sqrt(2)/2, 0.5],
+        [1.0, 0.0,           0.0,           0.0],
+        [0.0,  np.sqrt(2)/2,  np.sqrt(2)/2, 0.4],
+        [0.0,  0.0,           0.0,          1.0]
+    ])
+
+    direc_l_node = scene.add(direc_l, pose=pose)
+    spot_l_node = scene.add(spot_l, pose=pose)
+
     fuze_node = Node(mesh=fuze_mesh, translation=np.array(
         [0.1, 0.15, -np.min(fuze_trimesh.vertices[:, 2])]))
     scene.add_node(fuze_node)
