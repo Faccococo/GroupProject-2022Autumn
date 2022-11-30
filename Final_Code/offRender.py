@@ -35,6 +35,7 @@ def offRender(depth_stream, capture):
     bottle_gltf = trimesh.load('./Final_Code/examples/models/WaterBottle.glb')
     bottle_trimesh = bottle_gltf.geometry[list(bottle_gltf.geometry.keys())[0]]
     bottle_mesh = Mesh.from_trimesh(bottle_trimesh)
+
     bottle_pose = np.array([
         [1.0, 0.0, 0.0, 0.1],
         [0.0, 0.0, -1.0, -0.16],
@@ -131,13 +132,14 @@ def offRender(depth_stream, capture):
 
 
 def getLocation(position_x, position_y, position_depth):
-    y, x, z = Locator(position_x, position_y, position_depth)
-    x = 0 - x
+    x, y, z = Locator(position_x, position_y, position_depth)
     return x, y, z
 
 
 def createCamPos(x=0.5, y=0, z=0.4):
-    cam_pose = pyrr.matrix44.create_look_at((x, y, z), (0, 0, 0), (0, 0, 1))
+    y_d, x_d, z_d = x, y, z
+    x_d = 0 - x_d
+    cam_pose = pyrr.matrix44.create_look_at((y_d, x_d, z_d), (0, 0, 0), (0, 0, 1))
     cam_pose = np.linalg.inv(cam_pose.T)
     return cam_pose
 
