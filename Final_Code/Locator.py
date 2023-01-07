@@ -55,4 +55,4 @@ def Locator(position_x, position_y, position_depth):
     [x, y, z] = getThreeDimensionalCoordinate(
         xc, yc, zc, xz, yz, zz, xup, yup, w, h, d, seita)
 
-    return x, y, z
+    return x, -y, z
