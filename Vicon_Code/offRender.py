@@ -3,9 +3,8 @@ from pyrender import PerspectiveCamera, \
     Mesh, Node, Scene, \
     Viewer, OffscreenRenderer
 import time
-from Detector import Detector
-from Locator import Locator
 from deformation import deformation
+from python2cpp.Locator_vicon import Locator_vicon
 import pyrr
 import trimesh
 import numpy as np
@@ -15,7 +14,7 @@ import cv2
 pyglet.options['shadow_window'] = False
 
 
-def offRender(depth_stream, capture):
+def offRender():
     # Fuze trimesh
     fuze_trimesh = trimesh.load('./Final_Code/examples/models/fuze.obj')
     fuze_mesh = Mesh.from_trimesh(fuze_trimesh)
@@ -89,8 +88,7 @@ def offRender(depth_stream, capture):
     # add camera to scene
     cam = PerspectiveCamera(yfov=(np.pi / 3.0), aspectRatio=16 / 9)
 
-    position_x, position_y, position_depth, _ = Detector(depth_stream, capture)
-    cam_pose = getCamPosByCap(position_x, position_y, position_depth)
+    cam_pose = Locator_vicon()
 
     cam_node = scene.add(cam, cam_pose)
 
@@ -103,16 +101,12 @@ def offRender(depth_stream, capture):
     while True:
         time.sleep(1 / 60)
 
-        position_x, position_y, position_depth, frame = Detector(
-            depth_stream, capture)
-
         try:
             if abs(position_depth - last_depth) > 0.1:
                 position_depth = 0.95 * last_depth + 0.05 * position_depth
             # position_depth = 0.95 * last_depth + 0.05 * position_depth
 
-            scene.set_pose(node=cam_node, pose=getCamPosByCap(
-                position_x, position_y, position_depth))
+            scene.set_pose(node=cam_node, pose=Locator_vicon())
 
         except ValueError:
             cam_pose = pyrr.matrix44.create_look_at(
@@ -125,15 +119,11 @@ def offRender(depth_stream, capture):
         last_depth = position_depth
         color, _ = r.render(scene)
         cv2.imshow("video", color)
-        cv2.imshow("image", frame)
+        # cv2.imshow("image", frame)
         key = cv2.waitKey(50)
         if key == ord('q'):  # 判断是哪一个键按下
             break
 
-
-def getLocation(position_x, position_y, position_depth):
-    x, y, z = Locator(position_x, position_y, position_depth)
-    return x, y, z
 
 
 def createCamPos(x=0.5, y=0, z=0.4):
@@ -142,8 +132,3 @@ def createCamPos(x=0.5, y=0, z=0.4):
     cam_pose = pyrr.matrix44.create_look_at((y_d, x_d, z_d), (0, 0, 0), (0, 0, 1))
     cam_pose = np.linalg.inv(cam_pose.T)
     return cam_pose
-
-
-def getCamPosByCap(position_x, position_y, position_depth):
-    x, y, z = getLocation(position_x, position_y, position_depth)
-    return createCamPos(x, y, z)
