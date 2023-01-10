@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>G:\vrpn-version_07.35\vrpn-version_07.35\pc_win32\DLL\Debug\vrpndll.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>G:\vrpn-version_07.35\vrpn-version_07.35\pc_win32\Debug\make_vrpn_libs_build.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>G:\vrpn-version_07.35\vrpn-version_07.35\pc_win32\client_src\printvals\Debug\printvals.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

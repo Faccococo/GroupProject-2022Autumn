@@ -1,0 +1,11 @@
+﻿cl : 命令行  warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  test_imager.C
+test_imager.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/SAFESEH”规范)
+vrpn.lib(vrpn_BaseClass.obj) : warning LNK4099: 未找到 PDB“”(使用“vrpn.lib(vrpn_BaseClass.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+vrpn.lib(vrpn_Connection.obj) : warning LNK4099: 未找到 PDB“”(使用“vrpn.lib(vrpn_Connection.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+vrpn.lib(vrpn_EndpointContainer.obj) : warning LNK4099: 未找到 PDB“”(使用“vrpn.lib(vrpn_EndpointContainer.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+vrpn.lib(vrpn_FileConnection.obj) : warning LNK4099: 未找到 PDB“”(使用“vrpn.lib(vrpn_FileConnection.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+vrpn.lib(vrpn_Imager.obj) : warning LNK4099: 未找到 PDB“”(使用“vrpn.lib(vrpn_Imager.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+vrpn.lib(vrpn_Shared.obj) : warning LNK4099: 未找到 PDB“”(使用“vrpn.lib(vrpn_Shared.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+vrpn.lib(vrpn_Thread.obj) : warning LNK4099: 未找到 PDB“”(使用“vrpn.lib(vrpn_Thread.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+  test_imager.vcxproj -> G:\vrpn-version_07.35\vrpn-version_07.35\pc_win32\server_src\test_imager\Debug\test_imager.exe

@@ -1,0 +1,3 @@
+﻿E:\SoftWare\Visual Studio\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: 中间目录(.\pc_win32/Debug\)包含从另一个项目(vrpn.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
+E:\SoftWare\Visual Studio\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: 中间目录(.\pc_win32/Debug\)包含从另一个项目(make_vrpn_libs_build.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
+  vrpn_print_devices.vcxproj -> G:\vrpn-version_07.35\vrpn-version_07.35\pc_win32\client_src\vrpn_print_devices\Debug\vrpn_print_devices.exe

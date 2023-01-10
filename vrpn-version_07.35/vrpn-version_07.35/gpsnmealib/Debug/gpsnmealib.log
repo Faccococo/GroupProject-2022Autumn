@@ -1,0 +1,7 @@
+﻿cl : 命令行  warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  utmCoord.C
+  typedCoord.C
+  nmeaParser.C
+  latLonCoord.C
+  正在生成代码...
+  gpsnmealib.vcxproj -> G:\vrpn-version_07.35\vrpn-version_07.35\Debug\gpsnmealib.lib

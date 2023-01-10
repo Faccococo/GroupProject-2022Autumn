@@ -1,0 +1,14 @@
+﻿E:\SoftWare\Visual Studio\MSBuild\Microsoft\VC\v170\Microsoft.CppClean.targets(77,5): warning : 文件“g:\vrpn-version_07.35\vrpn-version_07.35\pc_win32\server_src\debug\vc143.idb”正由另一进程使用，因此该进程无法访问此文件。
+E:\SoftWare\Visual Studio\MSBuild\Microsoft\VC\v170\Microsoft.CppClean.targets(77,5): warning : 文件“g:\vrpn-version_07.35\vrpn-version_07.35\pc_win32\server_src\debug\vc143.pdb”正由另一进程使用，因此该进程无法访问此文件。
+E:\SoftWare\Visual Studio\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: 中间目录(.\../pc_win32/server_src/Debug\)包含从另一个项目(vrpn_hid_device_watcher.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
+cl : 命令行  warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  vrpn_Phantom.C
+  trimesh.C
+  texture_plane.C
+  plane.C
+  InstantBuzzEffect.cpp
+  forcefield.C
+  constraint.C
+  buzzForceField.C
+  正在生成代码...
+  vrpn_phantom.vcxproj -> G:\vrpn-version_07.35\vrpn-version_07.35\pc_win32\server_src\Debug\vrpn_phantom.lib

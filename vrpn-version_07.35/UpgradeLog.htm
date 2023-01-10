@@ -1,0 +1,529 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+ <html xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head><meta content="en-us" http-equiv="Content-Language" /><meta content="text/html; charset=utf-16" http-equiv="Content-Type" /><title _locID="ConversionReport0">
+          迁移报告
+        </title><style> 
+                    /* Body style, for the entire document */
+                    body
+                    {
+                        background: #F3F3F4;
+                        color: #1E1E1F;
+                        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    /* Header1 style, used for the main title */
+                    h1
+                    {
+                        padding: 10px 0px 10px 10px;
+                        font-size: 21pt;
+                        background-color: #E2E2E2;
+                        border-bottom: 1px #C1C1C2 solid; 
+                        color: #201F20;
+                        margin: 0;
+                        font-weight: normal;
+                    }
+
+                    /* Header2 style, used for "Overview" and other sections */
+                    h2
+                    {
+                        font-size: 18pt;
+                        font-weight: normal;
+                        padding: 15px 0 5px 0;
+                        margin: 0;
+                    }
+
+                    /* Header3 style, used for sub-sections, such as project name */
+                    h3
+                    {
+                        font-weight: normal;
+                        font-size: 15pt;
+                        margin: 0;
+                        padding: 15px 0 5px 0;
+                        background-color: transparent;
+                    }
+
+                    /* Color all hyperlinks one color */
+                    a
+                    {
+                        color: #1382CE;
+                    }
+
+                    /* Table styles */ 
+                    table
+                    {
+                        border-spacing: 0 0;
+                        border-collapse: collapse;
+                        font-size: 10pt;
+                    }
+
+                    table th
+                    {
+                        background: #E7E7E8;
+                        text-align: left;
+                        text-decoration: none;
+                        font-weight: normal;
+                        padding: 3px 6px 3px 6px;
+                    }
+
+                    table td
+                    {
+                        vertical-align: top;
+                        padding: 3px 6px 5px 5px;
+                        margin: 0px;
+                        border: 1px solid #E7E7E8;
+                        background: #F7F7F8;
+                    }
+
+                    /* Local link is a style for hyperlinks that link to file:/// content, there are lots so color them as 'normal' text until the user mouse overs */
+                    .localLink
+                    {
+                        color: #1E1E1F;
+                        background: #EEEEED;
+                        text-decoration: none;
+                    }
+
+                    .localLink:hover
+                    {
+                        color: #1382CE;
+                        background: #FFFF99;
+                        text-decoration: none;
+                    }
+
+                    /* Center text, used in the over views cells that contain message level counts */ 
+                    .textCentered
+                    {
+                        text-align: center;
+                    }
+
+                    /* The message cells in message tables should take up all avaliable space */
+                    .messageCell
+                    {
+                        width: 100%;
+                    }
+
+                    /* Padding around the content after the h1 */ 
+                    #content 
+                    {
+	                    padding: 0px 12px 12px 12px; 
+                    }
+
+                    /* The overview table expands to width, with a max width of 97% */ 
+                    #overview table
+                    {
+                        width: auto;
+                        max-width: 75%; 
+                    }
+
+                    /* The messages tables are always 97% width */
+                    #messages table
+                    {
+                        width: 97%;
+                    }
+
+                    /* All Icons */
+                    .IconSuccessEncoded, .IconInfoEncoded, .IconWarningEncoded, .IconErrorEncoded
+                    {
+                        min-width:18px;
+                        min-height:18px; 
+                        background-repeat:no-repeat;
+                        background-position:center;
+                    }
+
+                    /* Success icon encoded */
+                    .IconSuccessEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconSuccess#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABcElEQVR4Xq2TsUsCURzHv15g8ZJcBWlyiYYgCIWcb9DFRRwMW5TA2c0/QEFwFkxxUQdxVlBwCYWOi6IhWgQhBLHJUCkhLr/BW8S7gvrAg+N+v8/v+x68Z8MGy+XSCyABQAXgBgHGALoASkIIDWSLeLBetdHryMjd5IxQPWT4rn1c/P7+xxp72Cs9m5SZ0Bq2vPnbPFafK2zDvmNHypdC0BPkLlQhxJsCAhQoZwdZU5mwxh720qGo8MzTxTTKZDPCx2HoVzp6lz0Q9tKhyx0kGs8Ny+TkWRKk8lCROwEduhyg9l/6lunOPSfmH3NUH6uQ0KHLAe7JYvJjevm+DAMGJHToKtigE+vwvIidxLamb8IBY9e+C5LiXREkfho3TSd06HJA13/oh6T51MTsfQbHrsMynQ5dDihFjiK8JJAU9AKIWTp76dCVN7HWHrajmUEGvyF9nkbAE6gLIS7kTUyuf2gscLoJrElZo/Mvj+nPz/kLTmfnEwP3tB0AAAAASUVORK5CYII=);
+                    }
+
+                    /* Information icon encoded */
+                    .IconInfoEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconInformation#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHElEQVR4Xs2TsUoDQRRF7wwoziokjZUKadInhdhukR9YP8DMX1hYW+QvdsXa/QHBbcXC7W0CamWTQnclFutceIQJwwaWNLlwm5k5d94M76mmaeCrrmsLYOocY12FcxZFUeozCqKqqgYA8uevv1H6VuPxcwlfk5N92KHBxfFeCSAxxswlYAW/Xr989x/mv9gkhtyMDhcAxgzRsp7flj8B/HF1RsMXq+NZMkopaHe7lbKxQUEIGbKsYNoGn969060hZBkQex/W8oRQwsQaW2o3Ago2SVcJUzAgY3N0lTCZZm+zPS8HB51gMmS1DEYyOz9acKO1D8JWTlafKIMxdhvlfdyT94Vv5h7P8Ky7nQzACmhvKq3zk3PjW9asz9D/1oigecsioooAAAAASUVORK5CYII=);
+                    }
+
+                    /* Warning icon encoded */
+                    .IconWarningEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconWarning#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAx0lEQVR4XpWSMQ7CMAxFf4xAyBMLCxMrO8dhaBcuwdCJS3RJBw7SA/QGTCxdWJgiQYWKXJWKIXHIlyw5lqr34tQgEOdcBsCOx5yZK3hCCKdYXneQkh4pEfqzLfu+wVDSyyzFoJjfz9NB+pAF+eizx2Vruts0k15mPgvS6GYvpVtQhB61IB/dk6AF6fS4Ben0uIX5odtFe8Q/eW1KvFeH4e8khT6+gm5B+t3juyDt7n0jpe+CANTd+oTUjN/U3yVaABnSUjFz/gFq44JaVSCXeQAAAABJRU5ErkJggg==);
+                    }
+
+                    /* Error icon encoded */
+                    .IconErrorEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconError#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABQElEQVR4XqWTvUoEQRCE6wYPZUA80AfwAQz23uCMjA7MDRQEIzPBVEyNTQUFIw00vcQTTMzuAh/AxEQQT8HF/3G/oGGnEUGuoNnd6qoZuqltyKEsyzVJq5I6rnUp6SjGeGhESikzzlc1eL7opfuVbrqbU1Zw9NCgtQMaZpY0eNnaaL2fHusvTK5vKu7sjSS1Y4y3QUA6K3e3Mau5UFDyMP7tYF9o8cAHZv68vipoIJg971PZIZ5HiwdvYGGvFVFHmGmZ2MxwmQYPXubPl9Up0tfoMQGetXd6mRbvhBw+boZ6WF7Mbv1+GsHRk0fQmPAH1GfmZirbCfDJ61tw3Px8/8pZsPAG4jlVhcPgZ7adwNWBB68lkRQWFiTgFlbnLY3DGGM7izIJIyT/jjIvEJw6fdJTc6krDzh6aMwMP9bvDH4ADSsa9uSWVJkAAAAASUVORK5CYII=);
+                    }
+                 </style><script type="text/javascript" language="javascript"> 
+          
+            // Startup 
+            // Hook up the the loaded event for the document/window, to linkify the document content
+            var startupFunction = function() { linkifyElement("messages"); };
+            
+            if(window.attachEvent)
+            {
+              window.attachEvent('onload', startupFunction);
+            }
+            else if (window.addEventListener) 
+            {
+              window.addEventListener('load', startupFunction, false);
+            }
+            else 
+            {
+              document.addEventListener('load', startupFunction, false);
+            } 
+            
+            // Toggles the visibility of table rows with the specified name 
+            function toggleTableRowsByName(name)
+            {
+               var allRows = document.getElementsByTagName('tr');
+               for (i=0; i < allRows.length; i++)
+               {
+                  var currentName = allRows[i].getAttribute('name');
+                  if(!!currentName && currentName.indexOf(name) == 0)
+                  {
+                      var isVisible = allRows[i].style.display == ''; 
+                      isVisible ? allRows[i].style.display = 'none' : allRows[i].style.display = '';
+                  }
+               }
+            }
+            
+            function scrollToFirstVisibleRow(name) 
+            {
+               var allRows = document.getElementsByTagName('tr');
+               for (i=0; i < allRows.length; i++)
+               {
+                  var currentName = allRows[i].getAttribute('name');
+                  var isVisible = allRows[i].style.display == ''; 
+                  if(!!currentName && currentName.indexOf(name) == 0 && isVisible)
+                  {
+                     allRows[i].scrollIntoView(true); 
+                     return true; 
+                  }
+               }
+               
+               return false;
+            }
+            
+            // Linkifies the specified text content, replaces candidate links with html links 
+            function linkify(text)
+            {
+                 if(!text || 0 === text.length)
+                 {
+                     return text; 
+                 }
+
+                 // Find http, https and ftp links and replace them with hyper links 
+                 var urlLink = /(http|https|ftp)\:\/\/[a-zA-Z0-9\-\.]+(:[a-zA-Z0-9]*)?\/?([a-zA-Z0-9\-\._\?\,\/\\\+&%\$#\=~;\{\}])*/gi;
+                 
+                 return text.replace(urlLink, '<a href="$&">$&</a>') ;
+            }
+            
+            // Linkifies the specified element by ID
+            function linkifyElement(id)
+            {
+                var element = document.getElementById(id);
+                if(!!element)
+                {
+                  element.innerHTML = linkify(element.innerHTML); 
+                }
+            }
+            
+            function ToggleMessageVisibility(projectName)
+            {
+              if(!projectName || 0 === projectName.length)
+              {
+                return; 
+              }
+              
+              toggleTableRowsByName("MessageRowClass" + projectName);
+              toggleTableRowsByName('MessageRowHeaderShow' + projectName);
+              toggleTableRowsByName('MessageRowHeaderHide' + projectName); 
+            }
+            
+            function ScrollToFirstVisibleMessage(projectName)
+            {
+              if(!projectName || 0 === projectName.length)
+              {
+                return; 
+              }
+              
+              // First try the 'Show messages' row
+              if(!scrollToFirstVisibleRow('MessageRowHeaderShow' + projectName))
+              {
+                // Failed to find a visible row for 'Show messages', try an actual message row 
+                scrollToFirstVisibleRow('MessageRowClass' + projectName); 
+              }
+            }
+           </script></head><body><h1 _locID="ConversionReport">
+          迁移报告 - </h1><div id="content"><h2 _locID="OverviewTitle">概述</h2><div id="overview"><table><tr><th></th><th _locID="ProjectTableHeader">项目</th><th _locID="PathTableHeader">路径</th><th _locID="ErrorsTableHeader">错误</th><th _locID="WarningsTableHeader">警告</th><th _locID="MessagesTableHeader">消息</th></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#client_and_server">client_and_server</a></strong></td><td>server_src\client_and_server.vcproj</td><td class="textCentered"><a href="#client_and_serverError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('client_and_server'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#clock_drift_estimator">clock_drift_estimator</a></strong></td><td>client_src\clock_drift_estimator.vcproj</td><td class="textCentered"><a href="#clock_drift_estimatorError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('clock_drift_estimator'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#daq_server">daq_server</a></strong></td><td>server_src\daq_server.vcproj</td><td class="textCentered"><a href="#daq_serverError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('daq_server'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#DirectShow_baseclasses">DirectShow_baseclasses</a></strong></td><td>server_src\directshow_video_server\DirectShow_baseclasses.vcproj</td><td class="textCentered"><a href="#DirectShow_baseclassesError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('DirectShow_baseclasses'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#directshow_video_server">directshow_video_server</a></strong></td><td>server_src\directshow_video_server\directshow_video_server.vcproj</td><td class="textCentered"><a href="#directshow_video_serverError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('directshow_video_server'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#forcedevice_test_client">forcedevice_test_client</a></strong></td><td>client_src\forcedevice_test_client.vcproj</td><td class="textCentered"><a href="#forcedevice_test_clientError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('forcedevice_test_client'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#gpsnmealib">gpsnmealib</a></strong></td><td>gpsnmealib\gpsnmealib.vcproj</td><td class="textCentered"><a href="#gpsnmealibError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('gpsnmealib'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#printcereal">printcereal</a></strong></td><td>client_src\printcereal.vcproj</td><td class="textCentered"><a href="#printcerealError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('printcereal'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#printvals">printvals</a></strong></td><td>client_src\printvals.vcproj</td><td class="textCentered"><a href="#printvalsError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('printvals'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#quatlib">quatlib</a></strong></td><td>quat\quatlib.vcproj</td><td class="textCentered"><a href="#quatlibError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('quatlib'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#run_auxiliary_logger">run_auxiliary_logger</a></strong></td><td>client_src\run_auxiliary_logger.vcproj</td><td class="textCentered"><a href="#run_auxiliary_loggerError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('run_auxiliary_logger'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#sphere_client">sphere_client</a></strong></td><td>client_src\sphere_client.vcproj</td><td class="textCentered"><a href="#sphere_clientError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('sphere_client'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#test_analogfly">test_analogfly</a></strong></td><td>server_src\test_analogfly.vcproj</td><td class="textCentered"><a href="#test_analogflyError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('test_analogfly'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#test_auxiliary_logger">test_auxiliary_logger</a></strong></td><td>server_src\test_auxiliary_logger.vcproj</td><td class="textCentered"><a href="#test_auxiliary_loggerError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('test_auxiliary_logger'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#test_freespace">test_freespace</a></strong></td><td>server_src\test_freespace.vcproj</td><td class="textCentered"><a href="#test_freespaceError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('test_freespace'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#test_gen_rpc">test_gen_rpc</a></strong></td><td>util\gen_rpc\test_gen_rpc.vcproj</td><td class="textCentered"><a href="#test_gen_rpcError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('test_gen_rpc'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#test_imager">test_imager</a></strong></td><td>CLIENT_SRC\test_imager.vcproj</td><td class="textCentered"><a href="#test_imagerError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('test_imager'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#test_logging">test_logging</a></strong></td><td>server_src\test_logging.vcproj</td><td class="textCentered"><a href="#test_loggingError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('test_logging'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#test_radamec_spi">test_radamec_spi</a></strong></td><td>server_src\test_radamec_spi.vcproj</td><td class="textCentered"><a href="#test_radamec_spiError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('test_radamec_spi'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#test_rumble">test_rumble</a></strong></td><td>server_src\test_rumble.vcproj</td><td class="textCentered"><a href="#test_rumbleError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('test_rumble'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#test_vrpn">test_vrpn</a></strong></td><td>server_src\test_vrpn.vcproj</td><td class="textCentered"><a href="#test_vrpnError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('test_vrpn'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#test_zaber">test_zaber</a></strong></td><td>client_src\test_zaber.vcproj</td><td class="textCentered"><a href="#test_zaberError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('test_zaber'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#testimager_client">testimager_client</a></strong></td><td>client_src\testimager_client.vcproj</td><td class="textCentered"><a href="#testimager_clientError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('testimager_client'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#testimager_server">testimager_server</a></strong></td><td>server_src\testimager_server.vcproj</td><td class="textCentered"><a href="#testimager_serverError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('testimager_server'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#timecode_generator">timecode_generator</a></strong></td><td>server_src\timecode_generator_server\timecode_generator.vcproj</td><td class="textCentered"><a href="#timecode_generatorError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('timecode_generator'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#tracker_to_poser">tracker_to_poser</a></strong></td><td>CLIENT_SRC\tracker_to_poser.vcproj</td><td class="textCentered"><a href="#tracker_to_poserError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('tracker_to_poser'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#vrpn_hid_device_watcher">vrpn_hid_device_watcher</a></strong></td><td>server_src\vrpn_hid_device_watcher.vcproj</td><td class="textCentered"><a href="#vrpn_hid_device_watcherError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('vrpn_hid_device_watcher'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#vrpn_phantom">vrpn_phantom</a></strong></td><td>server_src\vrpn_phantom.vcproj</td><td class="textCentered"><a href="#vrpn_phantomError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('vrpn_phantom'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#vrpn_print_devices">vrpn_print_devices</a></strong></td><td>client_src\vrpn_print_devices.vcproj</td><td class="textCentered"><a href="#vrpn_print_devicesError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('vrpn_print_devices'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#vrpn_server">vrpn_server</a></strong></td><td>server_src\vrpn_server.vcproj</td><td class="textCentered"><a href="#vrpn_serverError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('vrpn_server'); return false;">1</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#vrpndll">vrpndll</a></strong></td><td>vrpndll.vcproj</td><td class="textCentered"><a href="#vrpndllError">2</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('vrpndll'); return false;">1</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#make_vrpn_libs_build">make_vrpn_libs_build</a></strong></td><td>make_vrpn_libs_build.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#make_vrpn_libs_buildWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('make_vrpn_libs_build'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#time_test">time_test</a></strong></td><td>time_test.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#time_testWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('time_test'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#vrpn">vrpn</a></strong></td><td>vrpn.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#vrpnWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('vrpn'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#Solution"><span _locID="OverviewSolutionSpan">解决方案</span></a></strong></td><td>vrpn.sln</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#SolutionWarning">1</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('Solution'); return false;">2</a></td></tr><tr><td class="IconSuccessEncoded" /><td><strong><a href="#Library">Library</a></strong></td><td>Library</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconSuccessEncoded" /><td><strong><a href="#Main_Server">Main_Server</a></strong></td><td>Main_Server</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconSuccessEncoded" /><td><strong><a href="#Other_Servers">Other_Servers</a></strong></td><td>Other_Servers</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconSuccessEncoded" /><td><strong><a href="#Tests">Tests</a></strong></td><td>Tests</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconSuccessEncoded" /><td><strong><a href="#Utilities">Utilities</a></strong></td><td>Utilities</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr></table></div><h2 _locID="SolutionAndProjectsTitle">解决方案和项目</h2><div id="messages"><a name="client_and_server" /><h3>client_and_server</h3><table><tr id="client_and_serverHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClassclient_and_server"><td class="IconErrorEncoded"><a name="client_and_serverError" /></td><td class="messageCell"><strong>server_src\client_and_server.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\server_src\client_and_server.vcproj' was not found.</span></td></tr><tr name="ErrorRowClassclient_and_server"><td class="IconErrorEncoded"><a name="client_and_serverError" /></td><td class="messageCell"><strong>server_src\client_and_server.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowclient_and_server"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="client_and_serverMessage" onclick="ToggleMessageVisibility('client_and_server'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClassclient_and_server" style="display: none"><td class="IconInfoEncoded"><a name="client_and_serverMessage" /></td><td class="messageCell"><strong>server_src\client_and_server.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\server_src\client_and_server.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHideclient_and_server"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="client_and_serverMessage" onclick="ToggleMessageVisibility('client_and_server'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="clock_drift_estimator" /><h3>clock_drift_estimator</h3><table><tr id="clock_drift_estimatorHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClassclock_drift_estimator"><td class="IconErrorEncoded"><a name="clock_drift_estimatorError" /></td><td class="messageCell"><strong>client_src\clock_drift_estimator.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\client_src\clock_drift_estimator.vcproj' was not found.</span></td></tr><tr name="ErrorRowClassclock_drift_estimator"><td class="IconErrorEncoded"><a name="clock_drift_estimatorError" /></td><td class="messageCell"><strong>client_src\clock_drift_estimator.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowclock_drift_estimator"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="clock_drift_estimatorMessage" onclick="ToggleMessageVisibility('clock_drift_estimator'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClassclock_drift_estimator" style="display: none"><td class="IconInfoEncoded"><a name="clock_drift_estimatorMessage" /></td><td class="messageCell"><strong>client_src\clock_drift_estimator.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\client_src\clock_drift_estimator.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHideclock_drift_estimator"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="clock_drift_estimatorMessage" onclick="ToggleMessageVisibility('clock_drift_estimator'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="daq_server" /><h3>daq_server</h3><table><tr id="daq_serverHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClassdaq_server"><td class="IconErrorEncoded"><a name="daq_serverError" /></td><td class="messageCell"><strong>server_src\daq_server.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\server_src\daq_server.vcproj' was not found.</span></td></tr><tr name="ErrorRowClassdaq_server"><td class="IconErrorEncoded"><a name="daq_serverError" /></td><td class="messageCell"><strong>server_src\daq_server.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowdaq_server"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="daq_serverMessage" onclick="ToggleMessageVisibility('daq_server'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClassdaq_server" style="display: none"><td class="IconInfoEncoded"><a name="daq_serverMessage" /></td><td class="messageCell"><strong>server_src\daq_server.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\server_src\daq_server.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidedaq_server"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="daq_serverMessage" onclick="ToggleMessageVisibility('daq_server'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="DirectShow_baseclasses" /><h3>DirectShow_baseclasses</h3><table><tr id="DirectShow_baseclassesHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClassDirectShow_baseclasses"><td class="IconErrorEncoded"><a name="DirectShow_baseclassesError" /></td><td class="messageCell"><strong>server_src\directshow_video_server\DirectShow_baseclasses.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\server_src\directshow_video_server\DirectShow_baseclasses.vcproj' was not found.</span></td></tr><tr name="ErrorRowClassDirectShow_baseclasses"><td class="IconErrorEncoded"><a name="DirectShow_baseclassesError" /></td><td class="messageCell"><strong>server_src\directshow_video_server\DirectShow_baseclasses.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowDirectShow_baseclasses"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="DirectShow_baseclassesMessage" onclick="ToggleMessageVisibility('DirectShow_baseclasses'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClassDirectShow_baseclasses" style="display: none"><td class="IconInfoEncoded"><a name="DirectShow_baseclassesMessage" /></td><td class="messageCell"><strong>server_src\directshow_video_server\DirectShow_baseclasses.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\server_src\directshow_video_server\DirectShow_baseclasses.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHideDirectShow_baseclasses"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="DirectShow_baseclassesMessage" onclick="ToggleMessageVisibility('DirectShow_baseclasses'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="directshow_video_server" /><h3>directshow_video_server</h3><table><tr id="directshow_video_serverHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClassdirectshow_video_server"><td class="IconErrorEncoded"><a name="directshow_video_serverError" /></td><td class="messageCell"><strong>server_src\directshow_video_server\directshow_video_server.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\server_src\directshow_video_server\directshow_video_server.vcproj' was not found.</span></td></tr><tr name="ErrorRowClassdirectshow_video_server"><td class="IconErrorEncoded"><a name="directshow_video_serverError" /></td><td class="messageCell"><strong>server_src\directshow_video_server\directshow_video_server.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowdirectshow_video_server"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="directshow_video_serverMessage" onclick="ToggleMessageVisibility('directshow_video_server'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClassdirectshow_video_server" style="display: none"><td class="IconInfoEncoded"><a name="directshow_video_serverMessage" /></td><td class="messageCell"><strong>server_src\directshow_video_server\directshow_video_server.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\server_src\directshow_video_server\directshow_video_server.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidedirectshow_video_server"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="directshow_video_serverMessage" onclick="ToggleMessageVisibility('directshow_video_server'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="forcedevice_test_client" /><h3>forcedevice_test_client</h3><table><tr id="forcedevice_test_clientHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClassforcedevice_test_client"><td class="IconErrorEncoded"><a name="forcedevice_test_clientError" /></td><td class="messageCell"><strong>client_src\forcedevice_test_client.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\client_src\forcedevice_test_client.vcproj' was not found.</span></td></tr><tr name="ErrorRowClassforcedevice_test_client"><td class="IconErrorEncoded"><a name="forcedevice_test_clientError" /></td><td class="messageCell"><strong>client_src\forcedevice_test_client.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowforcedevice_test_client"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="forcedevice_test_clientMessage" onclick="ToggleMessageVisibility('forcedevice_test_client'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClassforcedevice_test_client" style="display: none"><td class="IconInfoEncoded"><a name="forcedevice_test_clientMessage" /></td><td class="messageCell"><strong>client_src\forcedevice_test_client.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\client_src\forcedevice_test_client.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHideforcedevice_test_client"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="forcedevice_test_clientMessage" onclick="ToggleMessageVisibility('forcedevice_test_client'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="gpsnmealib" /><h3>gpsnmealib</h3><table><tr id="gpsnmealibHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClassgpsnmealib"><td class="IconErrorEncoded"><a name="gpsnmealibError" /></td><td class="messageCell"><strong>gpsnmealib\gpsnmealib.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\gpsnmealib\gpsnmealib.vcproj' was not found.</span></td></tr><tr name="ErrorRowClassgpsnmealib"><td class="IconErrorEncoded"><a name="gpsnmealibError" /></td><td class="messageCell"><strong>gpsnmealib\gpsnmealib.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowgpsnmealib"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="gpsnmealibMessage" onclick="ToggleMessageVisibility('gpsnmealib'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClassgpsnmealib" style="display: none"><td class="IconInfoEncoded"><a name="gpsnmealibMessage" /></td><td class="messageCell"><strong>gpsnmealib\gpsnmealib.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\gpsnmealib\gpsnmealib.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidegpsnmealib"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="gpsnmealibMessage" onclick="ToggleMessageVisibility('gpsnmealib'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="printcereal" /><h3>printcereal</h3><table><tr id="printcerealHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClassprintcereal"><td class="IconErrorEncoded"><a name="printcerealError" /></td><td class="messageCell"><strong>client_src\printcereal.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\client_src\printcereal.vcproj' was not found.</span></td></tr><tr name="ErrorRowClassprintcereal"><td class="IconErrorEncoded"><a name="printcerealError" /></td><td class="messageCell"><strong>client_src\printcereal.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowprintcereal"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="printcerealMessage" onclick="ToggleMessageVisibility('printcereal'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClassprintcereal" style="display: none"><td class="IconInfoEncoded"><a name="printcerealMessage" /></td><td class="messageCell"><strong>client_src\printcereal.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\client_src\printcereal.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHideprintcereal"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="printcerealMessage" onclick="ToggleMessageVisibility('printcereal'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="printvals" /><h3>printvals</h3><table><tr id="printvalsHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClassprintvals"><td class="IconErrorEncoded"><a name="printvalsError" /></td><td class="messageCell"><strong>client_src\printvals.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\client_src\printvals.vcproj' was not found.</span></td></tr><tr name="ErrorRowClassprintvals"><td class="IconErrorEncoded"><a name="printvalsError" /></td><td class="messageCell"><strong>client_src\printvals.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowprintvals"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="printvalsMessage" onclick="ToggleMessageVisibility('printvals'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClassprintvals" style="display: none"><td class="IconInfoEncoded"><a name="printvalsMessage" /></td><td class="messageCell"><strong>client_src\printvals.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\client_src\printvals.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHideprintvals"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="printvalsMessage" onclick="ToggleMessageVisibility('printvals'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="quatlib" /><h3>quatlib</h3><table><tr id="quatlibHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClassquatlib"><td class="IconErrorEncoded"><a name="quatlibError" /></td><td class="messageCell"><strong>quat\quatlib.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\quat\quatlib.vcproj' was not found.</span></td></tr><tr name="ErrorRowClassquatlib"><td class="IconErrorEncoded"><a name="quatlibError" /></td><td class="messageCell"><strong>quat\quatlib.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowquatlib"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="quatlibMessage" onclick="ToggleMessageVisibility('quatlib'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClassquatlib" style="display: none"><td class="IconInfoEncoded"><a name="quatlibMessage" /></td><td class="messageCell"><strong>quat\quatlib.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\quat\quatlib.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidequatlib"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="quatlibMessage" onclick="ToggleMessageVisibility('quatlib'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="run_auxiliary_logger" /><h3>run_auxiliary_logger</h3><table><tr id="run_auxiliary_loggerHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClassrun_auxiliary_logger"><td class="IconErrorEncoded"><a name="run_auxiliary_loggerError" /></td><td class="messageCell"><strong>client_src\run_auxiliary_logger.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\client_src\run_auxiliary_logger.vcproj' was not found.</span></td></tr><tr name="ErrorRowClassrun_auxiliary_logger"><td class="IconErrorEncoded"><a name="run_auxiliary_loggerError" /></td><td class="messageCell"><strong>client_src\run_auxiliary_logger.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowrun_auxiliary_logger"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="run_auxiliary_loggerMessage" onclick="ToggleMessageVisibility('run_auxiliary_logger'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClassrun_auxiliary_logger" style="display: none"><td class="IconInfoEncoded"><a name="run_auxiliary_loggerMessage" /></td><td class="messageCell"><strong>client_src\run_auxiliary_logger.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\client_src\run_auxiliary_logger.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHiderun_auxiliary_logger"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="run_auxiliary_loggerMessage" onclick="ToggleMessageVisibility('run_auxiliary_logger'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="sphere_client" /><h3>sphere_client</h3><table><tr id="sphere_clientHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClasssphere_client"><td class="IconErrorEncoded"><a name="sphere_clientError" /></td><td class="messageCell"><strong>client_src\sphere_client.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\client_src\sphere_client.vcproj' was not found.</span></td></tr><tr name="ErrorRowClasssphere_client"><td class="IconErrorEncoded"><a name="sphere_clientError" /></td><td class="messageCell"><strong>client_src\sphere_client.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowsphere_client"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="sphere_clientMessage" onclick="ToggleMessageVisibility('sphere_client'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClasssphere_client" style="display: none"><td class="IconInfoEncoded"><a name="sphere_clientMessage" /></td><td class="messageCell"><strong>client_src\sphere_client.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\client_src\sphere_client.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidesphere_client"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="sphere_clientMessage" onclick="ToggleMessageVisibility('sphere_client'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="test_analogfly" /><h3>test_analogfly</h3><table><tr id="test_analogflyHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClasstest_analogfly"><td class="IconErrorEncoded"><a name="test_analogflyError" /></td><td class="messageCell"><strong>server_src\test_analogfly.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\server_src\test_analogfly.vcproj' was not found.</span></td></tr><tr name="ErrorRowClasstest_analogfly"><td class="IconErrorEncoded"><a name="test_analogflyError" /></td><td class="messageCell"><strong>server_src\test_analogfly.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowtest_analogfly"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="test_analogflyMessage" onclick="ToggleMessageVisibility('test_analogfly'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClasstest_analogfly" style="display: none"><td class="IconInfoEncoded"><a name="test_analogflyMessage" /></td><td class="messageCell"><strong>server_src\test_analogfly.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\server_src\test_analogfly.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidetest_analogfly"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="test_analogflyMessage" onclick="ToggleMessageVisibility('test_analogfly'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="test_auxiliary_logger" /><h3>test_auxiliary_logger</h3><table><tr id="test_auxiliary_loggerHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClasstest_auxiliary_logger"><td class="IconErrorEncoded"><a name="test_auxiliary_loggerError" /></td><td class="messageCell"><strong>server_src\test_auxiliary_logger.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\server_src\test_auxiliary_logger.vcproj' was not found.</span></td></tr><tr name="ErrorRowClasstest_auxiliary_logger"><td class="IconErrorEncoded"><a name="test_auxiliary_loggerError" /></td><td class="messageCell"><strong>server_src\test_auxiliary_logger.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowtest_auxiliary_logger"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="test_auxiliary_loggerMessage" onclick="ToggleMessageVisibility('test_auxiliary_logger'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClasstest_auxiliary_logger" style="display: none"><td class="IconInfoEncoded"><a name="test_auxiliary_loggerMessage" /></td><td class="messageCell"><strong>server_src\test_auxiliary_logger.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\server_src\test_auxiliary_logger.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidetest_auxiliary_logger"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="test_auxiliary_loggerMessage" onclick="ToggleMessageVisibility('test_auxiliary_logger'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="test_freespace" /><h3>test_freespace</h3><table><tr id="test_freespaceHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClasstest_freespace"><td class="IconErrorEncoded"><a name="test_freespaceError" /></td><td class="messageCell"><strong>server_src\test_freespace.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\server_src\test_freespace.vcproj' was not found.</span></td></tr><tr name="ErrorRowClasstest_freespace"><td class="IconErrorEncoded"><a name="test_freespaceError" /></td><td class="messageCell"><strong>server_src\test_freespace.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowtest_freespace"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="test_freespaceMessage" onclick="ToggleMessageVisibility('test_freespace'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClasstest_freespace" style="display: none"><td class="IconInfoEncoded"><a name="test_freespaceMessage" /></td><td class="messageCell"><strong>server_src\test_freespace.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\server_src\test_freespace.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidetest_freespace"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="test_freespaceMessage" onclick="ToggleMessageVisibility('test_freespace'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="test_gen_rpc" /><h3>test_gen_rpc</h3><table><tr id="test_gen_rpcHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClasstest_gen_rpc"><td class="IconErrorEncoded"><a name="test_gen_rpcError" /></td><td class="messageCell"><strong>util\gen_rpc\test_gen_rpc.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\util\gen_rpc\test_gen_rpc.vcproj' was not found.</span></td></tr><tr name="ErrorRowClasstest_gen_rpc"><td class="IconErrorEncoded"><a name="test_gen_rpcError" /></td><td class="messageCell"><strong>util\gen_rpc\test_gen_rpc.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowtest_gen_rpc"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="test_gen_rpcMessage" onclick="ToggleMessageVisibility('test_gen_rpc'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClasstest_gen_rpc" style="display: none"><td class="IconInfoEncoded"><a name="test_gen_rpcMessage" /></td><td class="messageCell"><strong>util\gen_rpc\test_gen_rpc.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\util\gen_rpc\test_gen_rpc.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidetest_gen_rpc"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="test_gen_rpcMessage" onclick="ToggleMessageVisibility('test_gen_rpc'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="test_imager" /><h3>test_imager</h3><table><tr id="test_imagerHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClasstest_imager"><td class="IconErrorEncoded"><a name="test_imagerError" /></td><td class="messageCell"><strong>CLIENT_SRC\test_imager.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\CLIENT_SRC\test_imager.vcproj' was not found.</span></td></tr><tr name="ErrorRowClasstest_imager"><td class="IconErrorEncoded"><a name="test_imagerError" /></td><td class="messageCell"><strong>CLIENT_SRC\test_imager.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowtest_imager"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="test_imagerMessage" onclick="ToggleMessageVisibility('test_imager'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClasstest_imager" style="display: none"><td class="IconInfoEncoded"><a name="test_imagerMessage" /></td><td class="messageCell"><strong>CLIENT_SRC\test_imager.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\CLIENT_SRC\test_imager.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidetest_imager"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="test_imagerMessage" onclick="ToggleMessageVisibility('test_imager'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="test_logging" /><h3>test_logging</h3><table><tr id="test_loggingHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClasstest_logging"><td class="IconErrorEncoded"><a name="test_loggingError" /></td><td class="messageCell"><strong>server_src\test_logging.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\server_src\test_logging.vcproj' was not found.</span></td></tr><tr name="ErrorRowClasstest_logging"><td class="IconErrorEncoded"><a name="test_loggingError" /></td><td class="messageCell"><strong>server_src\test_logging.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowtest_logging"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="test_loggingMessage" onclick="ToggleMessageVisibility('test_logging'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClasstest_logging" style="display: none"><td class="IconInfoEncoded"><a name="test_loggingMessage" /></td><td class="messageCell"><strong>server_src\test_logging.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\server_src\test_logging.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidetest_logging"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="test_loggingMessage" onclick="ToggleMessageVisibility('test_logging'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="test_radamec_spi" /><h3>test_radamec_spi</h3><table><tr id="test_radamec_spiHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClasstest_radamec_spi"><td class="IconErrorEncoded"><a name="test_radamec_spiError" /></td><td class="messageCell"><strong>server_src\test_radamec_spi.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\server_src\test_radamec_spi.vcproj' was not found.</span></td></tr><tr name="ErrorRowClasstest_radamec_spi"><td class="IconErrorEncoded"><a name="test_radamec_spiError" /></td><td class="messageCell"><strong>server_src\test_radamec_spi.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowtest_radamec_spi"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="test_radamec_spiMessage" onclick="ToggleMessageVisibility('test_radamec_spi'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClasstest_radamec_spi" style="display: none"><td class="IconInfoEncoded"><a name="test_radamec_spiMessage" /></td><td class="messageCell"><strong>server_src\test_radamec_spi.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\server_src\test_radamec_spi.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidetest_radamec_spi"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="test_radamec_spiMessage" onclick="ToggleMessageVisibility('test_radamec_spi'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="test_rumble" /><h3>test_rumble</h3><table><tr id="test_rumbleHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClasstest_rumble"><td class="IconErrorEncoded"><a name="test_rumbleError" /></td><td class="messageCell"><strong>server_src\test_rumble.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\server_src\test_rumble.vcproj' was not found.</span></td></tr><tr name="ErrorRowClasstest_rumble"><td class="IconErrorEncoded"><a name="test_rumbleError" /></td><td class="messageCell"><strong>server_src\test_rumble.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowtest_rumble"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="test_rumbleMessage" onclick="ToggleMessageVisibility('test_rumble'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClasstest_rumble" style="display: none"><td class="IconInfoEncoded"><a name="test_rumbleMessage" /></td><td class="messageCell"><strong>server_src\test_rumble.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\server_src\test_rumble.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidetest_rumble"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="test_rumbleMessage" onclick="ToggleMessageVisibility('test_rumble'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="test_vrpn" /><h3>test_vrpn</h3><table><tr id="test_vrpnHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClasstest_vrpn"><td class="IconErrorEncoded"><a name="test_vrpnError" /></td><td class="messageCell"><strong>server_src\test_vrpn.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\server_src\test_vrpn.vcproj' was not found.</span></td></tr><tr name="ErrorRowClasstest_vrpn"><td class="IconErrorEncoded"><a name="test_vrpnError" /></td><td class="messageCell"><strong>server_src\test_vrpn.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowtest_vrpn"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="test_vrpnMessage" onclick="ToggleMessageVisibility('test_vrpn'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClasstest_vrpn" style="display: none"><td class="IconInfoEncoded"><a name="test_vrpnMessage" /></td><td class="messageCell"><strong>server_src\test_vrpn.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\server_src\test_vrpn.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidetest_vrpn"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="test_vrpnMessage" onclick="ToggleMessageVisibility('test_vrpn'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="test_zaber" /><h3>test_zaber</h3><table><tr id="test_zaberHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClasstest_zaber"><td class="IconErrorEncoded"><a name="test_zaberError" /></td><td class="messageCell"><strong>client_src\test_zaber.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\client_src\test_zaber.vcproj' was not found.</span></td></tr><tr name="ErrorRowClasstest_zaber"><td class="IconErrorEncoded"><a name="test_zaberError" /></td><td class="messageCell"><strong>client_src\test_zaber.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowtest_zaber"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="test_zaberMessage" onclick="ToggleMessageVisibility('test_zaber'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClasstest_zaber" style="display: none"><td class="IconInfoEncoded"><a name="test_zaberMessage" /></td><td class="messageCell"><strong>client_src\test_zaber.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\client_src\test_zaber.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidetest_zaber"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="test_zaberMessage" onclick="ToggleMessageVisibility('test_zaber'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="testimager_client" /><h3>testimager_client</h3><table><tr id="testimager_clientHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClasstestimager_client"><td class="IconErrorEncoded"><a name="testimager_clientError" /></td><td class="messageCell"><strong>client_src\testimager_client.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\client_src\testimager_client.vcproj' was not found.</span></td></tr><tr name="ErrorRowClasstestimager_client"><td class="IconErrorEncoded"><a name="testimager_clientError" /></td><td class="messageCell"><strong>client_src\testimager_client.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowtestimager_client"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="testimager_clientMessage" onclick="ToggleMessageVisibility('testimager_client'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClasstestimager_client" style="display: none"><td class="IconInfoEncoded"><a name="testimager_clientMessage" /></td><td class="messageCell"><strong>client_src\testimager_client.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\client_src\testimager_client.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidetestimager_client"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="testimager_clientMessage" onclick="ToggleMessageVisibility('testimager_client'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="testimager_server" /><h3>testimager_server</h3><table><tr id="testimager_serverHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClasstestimager_server"><td class="IconErrorEncoded"><a name="testimager_serverError" /></td><td class="messageCell"><strong>server_src\testimager_server.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\server_src\testimager_server.vcproj' was not found.</span></td></tr><tr name="ErrorRowClasstestimager_server"><td class="IconErrorEncoded"><a name="testimager_serverError" /></td><td class="messageCell"><strong>server_src\testimager_server.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowtestimager_server"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="testimager_serverMessage" onclick="ToggleMessageVisibility('testimager_server'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClasstestimager_server" style="display: none"><td class="IconInfoEncoded"><a name="testimager_serverMessage" /></td><td class="messageCell"><strong>server_src\testimager_server.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\server_src\testimager_server.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidetestimager_server"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="testimager_serverMessage" onclick="ToggleMessageVisibility('testimager_server'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="timecode_generator" /><h3>timecode_generator</h3><table><tr id="timecode_generatorHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClasstimecode_generator"><td class="IconErrorEncoded"><a name="timecode_generatorError" /></td><td class="messageCell"><strong>server_src\timecode_generator_server\timecode_generator.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\server_src\timecode_generator_server\timecode_generator.vcproj' was not found.</span></td></tr><tr name="ErrorRowClasstimecode_generator"><td class="IconErrorEncoded"><a name="timecode_generatorError" /></td><td class="messageCell"><strong>server_src\timecode_generator_server\timecode_generator.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowtimecode_generator"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="timecode_generatorMessage" onclick="ToggleMessageVisibility('timecode_generator'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClasstimecode_generator" style="display: none"><td class="IconInfoEncoded"><a name="timecode_generatorMessage" /></td><td class="messageCell"><strong>server_src\timecode_generator_server\timecode_generator.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\server_src\timecode_generator_server\timecode_generator.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidetimecode_generator"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="timecode_generatorMessage" onclick="ToggleMessageVisibility('timecode_generator'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="tracker_to_poser" /><h3>tracker_to_poser</h3><table><tr id="tracker_to_poserHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClasstracker_to_poser"><td class="IconErrorEncoded"><a name="tracker_to_poserError" /></td><td class="messageCell"><strong>CLIENT_SRC\tracker_to_poser.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\CLIENT_SRC\tracker_to_poser.vcproj' was not found.</span></td></tr><tr name="ErrorRowClasstracker_to_poser"><td class="IconErrorEncoded"><a name="tracker_to_poserError" /></td><td class="messageCell"><strong>CLIENT_SRC\tracker_to_poser.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowtracker_to_poser"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="tracker_to_poserMessage" onclick="ToggleMessageVisibility('tracker_to_poser'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClasstracker_to_poser" style="display: none"><td class="IconInfoEncoded"><a name="tracker_to_poserMessage" /></td><td class="messageCell"><strong>CLIENT_SRC\tracker_to_poser.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\CLIENT_SRC\tracker_to_poser.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidetracker_to_poser"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="tracker_to_poserMessage" onclick="ToggleMessageVisibility('tracker_to_poser'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="vrpn_hid_device_watcher" /><h3>vrpn_hid_device_watcher</h3><table><tr id="vrpn_hid_device_watcherHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClassvrpn_hid_device_watcher"><td class="IconErrorEncoded"><a name="vrpn_hid_device_watcherError" /></td><td class="messageCell"><strong>server_src\vrpn_hid_device_watcher.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\server_src\vrpn_hid_device_watcher.vcproj' was not found.</span></td></tr><tr name="ErrorRowClassvrpn_hid_device_watcher"><td class="IconErrorEncoded"><a name="vrpn_hid_device_watcherError" /></td><td class="messageCell"><strong>server_src\vrpn_hid_device_watcher.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowvrpn_hid_device_watcher"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="vrpn_hid_device_watcherMessage" onclick="ToggleMessageVisibility('vrpn_hid_device_watcher'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClassvrpn_hid_device_watcher" style="display: none"><td class="IconInfoEncoded"><a name="vrpn_hid_device_watcherMessage" /></td><td class="messageCell"><strong>server_src\vrpn_hid_device_watcher.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\server_src\vrpn_hid_device_watcher.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidevrpn_hid_device_watcher"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="vrpn_hid_device_watcherMessage" onclick="ToggleMessageVisibility('vrpn_hid_device_watcher'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="vrpn_phantom" /><h3>vrpn_phantom</h3><table><tr id="vrpn_phantomHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClassvrpn_phantom"><td class="IconErrorEncoded"><a name="vrpn_phantomError" /></td><td class="messageCell"><strong>server_src\vrpn_phantom.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\server_src\vrpn_phantom.vcproj' was not found.</span></td></tr><tr name="ErrorRowClassvrpn_phantom"><td class="IconErrorEncoded"><a name="vrpn_phantomError" /></td><td class="messageCell"><strong>server_src\vrpn_phantom.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowvrpn_phantom"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="vrpn_phantomMessage" onclick="ToggleMessageVisibility('vrpn_phantom'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClassvrpn_phantom" style="display: none"><td class="IconInfoEncoded"><a name="vrpn_phantomMessage" /></td><td class="messageCell"><strong>server_src\vrpn_phantom.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\server_src\vrpn_phantom.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidevrpn_phantom"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="vrpn_phantomMessage" onclick="ToggleMessageVisibility('vrpn_phantom'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="vrpn_print_devices" /><h3>vrpn_print_devices</h3><table><tr id="vrpn_print_devicesHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClassvrpn_print_devices"><td class="IconErrorEncoded"><a name="vrpn_print_devicesError" /></td><td class="messageCell"><strong>client_src\vrpn_print_devices.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\client_src\vrpn_print_devices.vcproj' was not found.</span></td></tr><tr name="ErrorRowClassvrpn_print_devices"><td class="IconErrorEncoded"><a name="vrpn_print_devicesError" /></td><td class="messageCell"><strong>client_src\vrpn_print_devices.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowvrpn_print_devices"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="vrpn_print_devicesMessage" onclick="ToggleMessageVisibility('vrpn_print_devices'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClassvrpn_print_devices" style="display: none"><td class="IconInfoEncoded"><a name="vrpn_print_devicesMessage" /></td><td class="messageCell"><strong>client_src\vrpn_print_devices.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\client_src\vrpn_print_devices.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidevrpn_print_devices"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="vrpn_print_devicesMessage" onclick="ToggleMessageVisibility('vrpn_print_devices'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="vrpn_server" /><h3>vrpn_server</h3><table><tr id="vrpn_serverHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClassvrpn_server"><td class="IconErrorEncoded"><a name="vrpn_serverError" /></td><td class="messageCell"><strong>server_src\vrpn_server.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\server_src\vrpn_server.vcproj' was not found.</span></td></tr><tr name="ErrorRowClassvrpn_server"><td class="IconErrorEncoded"><a name="vrpn_serverError" /></td><td class="messageCell"><strong>server_src\vrpn_server.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowvrpn_server"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="vrpn_serverMessage" onclick="ToggleMessageVisibility('vrpn_server'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClassvrpn_server" style="display: none"><td class="IconInfoEncoded"><a name="vrpn_serverMessage" /></td><td class="messageCell"><strong>server_src\vrpn_server.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\server_src\vrpn_server.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidevrpn_server"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="vrpn_serverMessage" onclick="ToggleMessageVisibility('vrpn_server'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="vrpndll" /><h3>vrpndll</h3><table><tr id="vrpndllHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="ErrorRowClassvrpndll"><td class="IconErrorEncoded"><a name="vrpndllError" /></td><td class="messageCell"><strong>vrpndll.vcproj:
+        </strong><span>File 'G:\vrpn-version_07.35\vrpndll.vcproj' was not found.</span></td></tr><tr name="ErrorRowClassvrpndll"><td class="IconErrorEncoded"><a name="vrpndllError" /></td><td class="messageCell"><strong>vrpndll.vcproj:
+        </strong><span>项目升级失败。</span></td></tr><tr name="MessageRowHeaderShowvrpndll"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="vrpndllMessage" onclick="ToggleMessageVisibility('vrpndll'); return false;">
+          显示 1 其他消息
+        </a></td></tr><tr name="MessageRowClassvrpndll" style="display: none"><td class="IconInfoEncoded"><a name="vrpndllMessage" /></td><td class="messageCell"><strong>vrpndll.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\vrpndll.vcproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidevrpndll"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="vrpndllMessage" onclick="ToggleMessageVisibility('vrpndll'); return false;">
+          隐藏 1 其他消息
+        </a></td></tr></table><a name="make_vrpn_libs_build" /><h3>make_vrpn_libs_build</h3><table><tr id="make_vrpn_libs_buildHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="WarningRowClassmake_vrpn_libs_build"><td class="IconWarningEncoded"><a name="make_vrpn_libs_buildWarning" /></td><td class="messageCell"><strong>make_vrpn_libs_build.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClassmake_vrpn_libs_build"><td class="IconWarningEncoded"><a name="make_vrpn_libs_buildWarning" /></td><td class="messageCell"><strong>make_vrpn_libs_build.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('G:\vrpn-version_07.35\pc_win32\Debug\make_vrpn_libs_build.exe') does not match the Librarian's OutputFile property value '.\pc_win32/Debug\make_vrpn_libs_build.exe' ('G:\vrpn-version_07.35\pc_win32/Debug\make_vrpn_libs_build.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassmake_vrpn_libs_build"><td class="IconWarningEncoded"><a name="make_vrpn_libs_buildWarning" /></td><td class="messageCell"><strong>make_vrpn_libs_build.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('G:\vrpn-version_07.35\pc_win32\Debug\make_vrpn_libs_build.exe') does not match the Linker's OutputFile property value '.\pc_win32/Debug/make_vrpn_libs_build.exe' ('G:\vrpn-version_07.35\pc_win32/Debug/make_vrpn_libs_build.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClassmake_vrpn_libs_build"><td class="IconWarningEncoded"><a name="make_vrpn_libs_buildWarning" /></td><td class="messageCell"><strong>make_vrpn_libs_build.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('G:\vrpn-version_07.35\pc_win32\Release\make_vrpn_libs_build.exe') does not match the Librarian's OutputFile property value '.\pc_win32/Release\make_vrpn_libs_build.exe' ('G:\vrpn-version_07.35\pc_win32/Release\make_vrpn_libs_build.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassmake_vrpn_libs_build"><td class="IconWarningEncoded"><a name="make_vrpn_libs_buildWarning" /></td><td class="messageCell"><strong>make_vrpn_libs_build.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('G:\vrpn-version_07.35\pc_win32\Release\make_vrpn_libs_build.exe') does not match the Linker's OutputFile property value '.\pc_win32/Release/make_vrpn_libs_build.exe' ('G:\vrpn-version_07.35\pc_win32/Release/make_vrpn_libs_build.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowmake_vrpn_libs_build"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="make_vrpn_libs_buildMessage" onclick="ToggleMessageVisibility('make_vrpn_libs_build'); return false;">
+          显示 2 其他消息
+        </a></td></tr><tr name="MessageRowClassmake_vrpn_libs_build" style="display: none"><td class="IconInfoEncoded"><a name="make_vrpn_libs_buildMessage" /></td><td class="messageCell"><strong>make_vrpn_libs_build.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\make_vrpn_libs_build.vcproj'.</span></td></tr><tr name="MessageRowClassmake_vrpn_libs_build" style="display: none"><td class="IconInfoEncoded"><a name="make_vrpn_libs_buildMessage" /></td><td class="messageCell"><strong>make_vrpn_libs_build.vcproj:
+        </strong><span>Done converting to new project file 'G:\vrpn-version_07.35\make_vrpn_libs_build.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidemake_vrpn_libs_build"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="make_vrpn_libs_buildMessage" onclick="ToggleMessageVisibility('make_vrpn_libs_build'); return false;">
+          隐藏 2 其他消息
+        </a></td></tr></table><a name="time_test" /><h3>time_test</h3><table><tr id="time_testHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="WarningRowClasstime_test"><td class="IconWarningEncoded"><a name="time_testWarning" /></td><td class="messageCell"><strong>time_test.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClasstime_test"><td class="IconWarningEncoded"><a name="time_testWarning" /></td><td class="messageCell"><strong>time_test.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('G:\vrpn-version_07.35\pc_win32\time_test\Debug\time_test.exe') does not match the Librarian's OutputFile property value '.\pc_win32/time_test/Debug\time_test.exe' ('G:\vrpn-version_07.35\pc_win32/time_test/Debug\time_test.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClasstime_test"><td class="IconWarningEncoded"><a name="time_testWarning" /></td><td class="messageCell"><strong>time_test.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('G:\vrpn-version_07.35\pc_win32\time_test\Debug\time_test.exe') does not match the Linker's OutputFile property value '.\pc_win32/time_test/Debug/time_test.exe' ('G:\vrpn-version_07.35\pc_win32/time_test/Debug/time_test.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClasstime_test"><td class="IconWarningEncoded"><a name="time_testWarning" /></td><td class="messageCell"><strong>time_test.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('G:\vrpn-version_07.35\pc_win32\time_test\Release\time_test.exe') does not match the Librarian's OutputFile property value '.\pc_win32/time_test/Release\time_test.exe' ('G:\vrpn-version_07.35\pc_win32/time_test/Release\time_test.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClasstime_test"><td class="IconWarningEncoded"><a name="time_testWarning" /></td><td class="messageCell"><strong>time_test.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('G:\vrpn-version_07.35\pc_win32\time_test\Release\time_test.exe') does not match the Linker's OutputFile property value '.\pc_win32/time_test/Release/time_test.exe' ('G:\vrpn-version_07.35\pc_win32/time_test/Release/time_test.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowtime_test"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="time_testMessage" onclick="ToggleMessageVisibility('time_test'); return false;">
+          显示 2 其他消息
+        </a></td></tr><tr name="MessageRowClasstime_test" style="display: none"><td class="IconInfoEncoded"><a name="time_testMessage" /></td><td class="messageCell"><strong>time_test.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\time_test.vcproj'.</span></td></tr><tr name="MessageRowClasstime_test" style="display: none"><td class="IconInfoEncoded"><a name="time_testMessage" /></td><td class="messageCell"><strong>time_test.vcproj:
+        </strong><span>Done converting to new project file 'G:\vrpn-version_07.35\time_test.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidetime_test"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="time_testMessage" onclick="ToggleMessageVisibility('time_test'); return false;">
+          隐藏 2 其他消息
+        </a></td></tr></table><a name="vrpn" /><h3>vrpn</h3><table><tr id="vrpnHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="WarningRowClassvrpn"><td class="IconWarningEncoded"><a name="vrpnWarning" /></td><td class="messageCell"><strong>vrpn.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClassvrpn"><td class="IconWarningEncoded"><a name="vrpnWarning" /></td><td class="messageCell"><strong>vrpn.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('G:\vrpn-version_07.35\pc_win32\Debug\vrpn.lib') does not match the Librarian's OutputFile property value '.\pc_win32/Debug\vrpn.lib' ('G:\vrpn-version_07.35\pc_win32/Debug\vrpn.lib') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassvrpn"><td class="IconWarningEncoded"><a name="vrpnWarning" /></td><td class="messageCell"><strong>vrpn.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('G:\vrpn-version_07.35\pc_win32\Debug\vrpn.lib') does not match the Linker's OutputFile property value '.\pc_win32/Debug\vrpn.lib' ('G:\vrpn-version_07.35\pc_win32/Debug\vrpn.lib') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClassvrpn"><td class="IconWarningEncoded"><a name="vrpnWarning" /></td><td class="messageCell"><strong>vrpn.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('G:\vrpn-version_07.35\pc_win32\Release\vrpn.lib') does not match the Librarian's OutputFile property value '.\pc_win32/Release\vrpn.lib' ('G:\vrpn-version_07.35\pc_win32/Release\vrpn.lib') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassvrpn"><td class="IconWarningEncoded"><a name="vrpnWarning" /></td><td class="messageCell"><strong>vrpn.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('G:\vrpn-version_07.35\pc_win32\Release\vrpn.lib') does not match the Linker's OutputFile property value '.\pc_win32/Release\vrpn.lib' ('G:\vrpn-version_07.35\pc_win32/Release\vrpn.lib') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowvrpn"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="vrpnMessage" onclick="ToggleMessageVisibility('vrpn'); return false;">
+          显示 2 其他消息
+        </a></td></tr><tr name="MessageRowClassvrpn" style="display: none"><td class="IconInfoEncoded"><a name="vrpnMessage" /></td><td class="messageCell"><strong>vrpn.vcproj:
+        </strong><span>Converting project file 'G:\vrpn-version_07.35\vrpn.vcproj'.</span></td></tr><tr name="MessageRowClassvrpn" style="display: none"><td class="IconInfoEncoded"><a name="vrpnMessage" /></td><td class="messageCell"><strong>vrpn.vcproj:
+        </strong><span>Done converting to new project file 'G:\vrpn-version_07.35\vrpn.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidevrpn"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="vrpnMessage" onclick="ToggleMessageVisibility('vrpn'); return false;">
+          隐藏 2 其他消息
+        </a></td></tr></table><a name="Solution" /><h3 _locID="ProjectDisplayNameHeader">解决方案</h3><table><tr id="SolutionHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr name="WarningRowClassSolution"><td class="IconWarningEncoded"><a name="SolutionWarning" /></td><td class="messageCell"><strong>vrpn.sln:
+        </strong><span>Visual Studio 需对此项目要进行非功能性更改，以使该项目能在比 Visual Studio 2010 SP1 新的 Visual Studio 发布版本中打开，而不影响项目的行为。</span></td></tr><tr name="MessageRowHeaderShowSolution"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="SolutionMessage" onclick="ToggleMessageVisibility('Solution'); return false;">
+          显示 2 其他消息
+        </a></td></tr><tr name="MessageRowClassSolution" style="display: none"><td class="IconInfoEncoded"><a name="SolutionMessage" /></td><td class="messageCell"><strong>vrpn.sln:
+        </strong><span>文件已成功备份为 G:\vrpn-version_07.35\Backup\vrpn.sln</span></td></tr><tr name="MessageRowClassSolution" style="display: none"><td class="IconInfoEncoded"><a name="SolutionMessage" /></td><td class="messageCell"><strong>vrpn.sln:
+        </strong><span>已成功迁移解决方案</span></td></tr><tr style="display: none" name="MessageRowHeaderHideSolution"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="SolutionMessage" onclick="ToggleMessageVisibility('Solution'); return false;">
+          隐藏 2 其他消息
+        </a></td></tr></table><a name="Library" /><h3>Library</h3><table><tr id="LibraryHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr><td class="IconInfoEncoded" /><td class="messageCell" _locID="NoMessagesRow">Library 未记录任何消息。
+                  </td></tr></table><a name="Main_Server" /><h3>Main_Server</h3><table><tr id="Main_ServerHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr><td class="IconInfoEncoded" /><td class="messageCell" _locID="NoMessagesRow">Main_Server 未记录任何消息。
+                  </td></tr></table><a name="Other_Servers" /><h3>Other_Servers</h3><table><tr id="Other_ServersHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr><td class="IconInfoEncoded" /><td class="messageCell" _locID="NoMessagesRow">Other_Servers 未记录任何消息。
+                  </td></tr></table><a name="Tests" /><h3>Tests</h3><table><tr id="TestsHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr><td class="IconInfoEncoded" /><td class="messageCell" _locID="NoMessagesRow">Tests 未记录任何消息。
+                  </td></tr></table><a name="Utilities" /><h3>Utilities</h3><table><tr id="UtilitiesHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">消息</th></tr><tr><td class="IconInfoEncoded" /><td class="messageCell" _locID="NoMessagesRow">Utilities 未记录任何消息。
+                  </td></tr></table></div></div></body></html>

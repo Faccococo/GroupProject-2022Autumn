@@ -1,0 +1,4 @@
+﻿cl : 命令行  warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  test_freespace.C
+test_freespace.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/SAFESEH”规范)
+  test_freespace.vcxproj -> G:\vrpn-version_07.35\vrpn-version_07.35\pc_win32\server_src\test_freespace\Debug\test_freespace.exe

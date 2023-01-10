@@ -1,0 +1,8 @@
+﻿  matrix.c
+  quat.c
+  vector.c
+  xyzquat.c
+  正在生成代码...
+E:\SoftWare\Visual Studio\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1556,5): warning MSB8012: TargetPath(G:\vrpn-version_07.35\vrpn-version_07.35\quat\pc_win32\Debug\quatlib.lib) 与 Library 的 OutputFile 属性值(G:\vrpn-version_07.35\vrpn-version_07.35\quat\pc_win32\Debug\quat.lib)不匹配。这可能导致项目生成不正确。若要更正此问题，请确保 $(OutDir)、$(TargetName) 和 $(TargetExt) 属性值与 %(Lib.OutputFile) 中指定的值匹配。
+E:\SoftWare\Visual Studio\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1558,5): warning MSB8012: TargetName(quatlib) 与 Library 的 OutputFile 属性值(quat)不匹配。这可能导致项目生成不正确。若要更正此问题，请确保 $(OutDir)、$(TargetName) 和 $(TargetExt) 属性值与 %(Lib.OutputFile) 中指定的值匹配。
+  quatlib.vcxproj -> G:\vrpn-version_07.35\vrpn-version_07.35\quat\pc_win32\Debug\quatlib.lib

@@ -1,0 +1,4 @@
+﻿cl : 命令行  warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  vrpn_HID_device_watcher.cpp
+vrpn_HID_device_watcher.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/SAFESEH”规范)
+  vrpn_hid_device_watcher.vcxproj -> G:\vrpn-version_07.35\vrpn-version_07.35\pc_win32\server_src\Debug\vrpn_hid_device_watcher.exe
